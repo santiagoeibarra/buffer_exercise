@@ -1,6 +1,6 @@
 from buffer import Buffer
 
-b = Buffer(policy='ASDASDSA')
+b = Buffer(policy='FIFO')
 print(b)
 b.insert("Primero")
 print(b.show_last())

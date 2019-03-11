@@ -20,7 +20,11 @@ class Buffer:
         self._itemList = []
 
     def show_last(self):
-        return self._itemList[-1]
+        if self._policy == LIFO:
+            return self._itemList[0]
+
+        if self._policy == FIFO:
+            return self._itemList[-1]
 
 
     def insert(self, item):
