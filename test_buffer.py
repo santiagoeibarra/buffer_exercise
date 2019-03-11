@@ -79,6 +79,7 @@ def test_first_value_is_none():
 	buf.insert(item_b)
 	buf.insert(item_c)
 	assert buf.extract() is None
+
 '''
 
 
