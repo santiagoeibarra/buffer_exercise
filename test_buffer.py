@@ -16,7 +16,6 @@ def test_buffer_lifo_extract():
     thebuffer.insert(item_c)
     assert thebuffer.extract() == item_c
 
-
 def test_buffer_fifo_extract():
     """
     Test function extract elements for a FIFO queue
@@ -30,11 +29,10 @@ def test_buffer_fifo_extract():
     thebuffer.insert(item_c)
     assert thebuffer.extract() == item_a
 
-
 def test_buffer_fifo_insert():
     """
     Test function insert elements for a FIFO queue
-    """ 
+    """
     buf = Buffer("FIFO")
     item_a = "Hola"
     item_b = " "
@@ -42,15 +40,13 @@ def test_buffer_fifo_insert():
     buf.insert(item_a)
     buf.insert(item_b)
     buf.insert(item_c)
-
     assert buf.extract() == item_a
     assert buf.extract() == item_b
-
 
 def test_buffer_lifo_insert():
     """
     Test function insert elements for a LIFO queue
-    """     
+    """
     buf = Buffer("LIFO")
     item_a = "Hola"
     item_b = " "
@@ -58,10 +54,8 @@ def test_buffer_lifo_insert():
     buf.insert(item_a)
     buf.insert(item_b)
     buf.insert(item_c)
-
     assert buf.extract() == item_c
     assert buf.extract() == item_b
-
 
 def test_buffer_empty():
     buf = Buffer("FIFO")
@@ -95,7 +89,6 @@ def test_buffer_is_not_empty():
     second = "Segundo elemento"
     buf.insert(first)
     assert len(buf) > 0
-
 
 '''
 
