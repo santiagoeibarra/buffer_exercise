@@ -1,7 +1,6 @@
 import os
 import sys
 
-
 FIFO = 'FIFO'
 LIFO = 'LIFO'
 
@@ -11,11 +10,11 @@ class Buffer:
     Has 2 possible policies: FIFO (First In First Out) and LIFO (Last In
     First Out).
     """
-    
+
     def __init__(self, policy):
         policy = policy.upper()
         if policy not in [FIFO, LIFO]:
-            raise PolicyError("You need put valid policies FIFO or LIFO")
+            raise PolicyError("You need provide a policy. Valid policies are FIFO or LIFO")
         self._policy = policy
         self._itemList = []
 
@@ -28,14 +27,18 @@ class Buffer:
 
 
     def insert(self, item):
-        """Insert a item to the buffer"""
+        """
+        Insert a item to the buffer
+        >>> b.insert()
+        """
         self._itemList.append(item)
+        
 
  
     def extract(self):
         """
-        Remove an element from the buffer selecting desired policy
-        Usage object.extract(policy)
+        Remove an element from the buffer
+        Usage object.extract()
         """
         if len(self) == 0:
             raise BufferEmpty("Empty")
